@@ -81,6 +81,7 @@ class Fuck(object):
         'xmas': 'xmas/{name}/{from}',
         'yoda': 'yoda/{name}/{from}',
         'you': 'you/{name}/{from}',
+        'jinglebells': 'jinglebells/{from}',
     }
 
     def __init__(self, secure=False, language=None):
@@ -119,7 +120,7 @@ class Fuck(object):
         # use from_ since from is a keyword. *grumble*
         params = dict([(k.rstrip('_'), quote(v)) for k, v
             in kwargs.items() if v])
-        url = '{protocol}://foaas.herokuapp.com/{path}'.format(
+        url = '{protocol}://foaas.com/{path}'.format(
             protocol='https' if self.secure else 'http',
             path=path.format(**params))
         return url
